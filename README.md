@@ -1,4 +1,4 @@
-# FDY-SED
+# Frequency Dynamic Convolution-Recurrent Neural Network (FDY-CRNN) for Sound Event Detection
 
 
 Official implementation of <br>
