@@ -23,8 +23,8 @@ Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin o
 <img src=./utils/fig3.jpg align="left" height="270" width="395"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 
 Above bar chart compares the class-wise event-based F1 scores for the CRNN model with and without freqeuncy dynamic convolution. It can be observed that
-- Quasi-stationary sound events such as blender, frying and vacuum cleaner exhibits simple time-frequency patterns (example shown below (a), a log mel spectrogram of vacuum cleaner sound).
-- Non-stationary sound events such as alarm/bell ringing, cat, dishes, dog, electric shaver/toothbrush, running water and speech exhibits intricate time-frequency patterns (example shown below (b), a log mel spectrogram of speech sound).
+- Quasi-stationary sound events such as blender, frying and vacuum cleaner exhibits simple time-frequency patterns (example shown below (a), a log mel spectrogram of vacuum cleaner sound). Thus, frequency dynamic convolution is less effective on these sound events.
+- Non-stationary sound events such as alarm/bell ringing, cat, dishes, dog, electric shaver/toothbrush, running water and speech exhibits intricate time-frequency patterns (example shown below (b), a log mel spectrogram of speech sound). Thus, frequency dynamic convolution is especially effective on these sound events.
 
 <img src=./utils/fig4.jpg align="left" height="330" width="437"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 
