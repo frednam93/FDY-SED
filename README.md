@@ -7,7 +7,66 @@ Official implementation of <br>
  - **Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection** (Submitted to INTERSPEECH 2022) <br>
 by Hyeonuk Nam, Seong-Hu Kim, Byeong-Yun Ko, Yong-Hwa Park <br>[![arXiv](https://img.shields.io/badge/arXiv-2203.15296-brightgreen)](https://arxiv.org/abs/2203.15296)<br>
 
+![](./utils/fig2.jpg)<br>
+![](./utils/fig3.jpg)<br>
+![](./utils/fig4.jpg)<br>
 
 
 
-will be uploaded soon (before mid-April).
+
+Currently, only model achitecture for FDY-CRNN is available in this repo. Whole code implementation for training SED with FDY-CRNN will be uploaded soon (before mid-April).
+
+
+
+## Frequency Dynamic Convolution
+Will be updated soon!
+
+## Requirements
+Python version of 3.7.10 is used with following libraries
+- pytorch==1.8.0
+- pytorch-lightning==1.2.4
+- pytorchaudio==0.8.0
+- scipy==1.4.1
+- pandas==1.1.3
+- numpy==1.19.2
+
+
+other requrements in [requirements.txt](./requirements.txt)
+
+
+## Datasets
+You can download datasets by reffering to [DCASE 2021 Task 4 description page](http://dcase.community/challenge2021/task-sound-event-detection-and-separation-in-domestic-environments) or [DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task). Then, set the dataset directories in [config yaml files](./configs/) accordingly. You need DESED real datasets (weak/unlabeled in domain/validation/public eval) and DESED synthetic datasets (train/validation).
+
+## Training
+You can train and save model in `exps` folder by running:
+```shell
+python main.py
+```
+
+#### Results of FDY-CRNN on DESED Real Validation dataset:
+
+Model                   | PSDS1          | PSDS2          | Collar-based F1  | Intersection-based F1
+------------------------|----------------|----------------|------------------|-----------------
+w/o Dynamic Convolution | 0.416          | 0.640          | 51.8%            | 74.4%
+DY-CRNN                 | 0.441          | 0.663          | 52.6%            | 75.0%
+TDY-CRNN                | 0.415          | 0.652          | 51.2%            | 75.1%
+FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | **75.3%**
+
+   - These results are based on max values of each metric for 16 separate runs on each setting (refer to paper for details).
+
+## Reference
+[DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task) <br>
+[SED with FilterAugment](https://github.com/frednam93/FilterAugSED)
+
+## Citation & Contact
+If this repository helped your works, please cite papers below!
+```bib
+@article{nam2022frequency,
+      title={Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection}, 
+      author={Hyeonuk Nam and Seong-Hu Kim and Byeong-Yun Ko and Yong-Hwa Park},
+      journal={arXiv preprint arXiv:2203.15296},
+      year={2022},
+}
+
+```
+Please contact Hyeonuk Nam at frednam@kaist.ac.kr for any query.
