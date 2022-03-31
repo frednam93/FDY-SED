@@ -13,7 +13,7 @@ Currently, only model achitecture for FDY-CRNN is available in this repo. Whole 
 
 ## Frequency Dynamic Convolution
 
-<img src=./utils/fig2.png align="left" height="332" width="741"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+![](./utils/fig2.png)
 
 Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin of input, in order to remove tranlation-invariance of 2D convolution along the frequency axis.
 - Traditional 2D convolution enforces translation-invaraince on time-frequency domain audio data in both time and frequency axis.
