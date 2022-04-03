@@ -1,15 +1,11 @@
 # Frequency Dynamic Convolution-Recurrent Neural Network (FDY-CRNN) for Sound Event Detection
 
-
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frequency-dynamic-convolution-frequency/sound-event-detection-on-desed)](https://paperswithcode.com/sota/sound-event-detection-on-desed?p=frequency-dynamic-convolution-frequency)
 
 Official implementation of <br>
  - **Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection** (Submitted to INTERSPEECH 2022) <br>
 by Hyeonuk Nam, Seong-Hu Kim, Byeong-Yun Ko, Yong-Hwa Park <br>[![arXiv](https://img.shields.io/badge/arXiv-2203.15296-brightgreen)](https://arxiv.org/abs/2203.15296)<br>
 
-
-
-Currently, only model achitecture for FDY-CRNN is available in this repo. Whole code implementation for training SED with FDY-CRNN will be uploaded soon (before mid-April).
 
 ## Frequency Dynamic Convolution
 
@@ -46,7 +42,7 @@ other requrements in [requirements.txt](./requirements.txt)
 ## Datasets
 You can download datasets by reffering to [DCASE 2021 Task 4 description page](http://dcase.community/challenge2021/task-sound-event-detection-and-separation-in-domestic-environments) or [DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task). Then, set the dataset directories in [config yaml files](./configs/) accordingly. You need DESED real datasets (weak/unlabeled in domain/validation/public eval) and DESED synthetic datasets (train/validation).
 
-## Training (Currently unavailable)
+## Training
 You can train and save model in `exps` folder by running:
 ```shell
 python main.py
