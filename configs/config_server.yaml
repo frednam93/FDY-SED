@@ -1,0 +1,4 @@
+
+batch_size: [ 12, 12, 24 ]
+batch_size_val: 24
+num_workers: 6
