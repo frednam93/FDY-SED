@@ -13,7 +13,7 @@ Currently, only model achitecture for FDY-CRNN is available in this repo. Whole 
 
 ## Frequency Dynamic Convolution
 
-<img src=./utils/fig2.png align="left" height="332" width="741"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+![](./utils/fig2.png)
 
 Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin of input, in order to remove tranlation-invariance of 2D convolution along the frequency axis.
 - Traditional 2D convolution enforces translation-invaraince on time-frequency domain audio data in both time and frequency axis.
@@ -64,8 +64,9 @@ FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | *
    - These results are based on max values of each metric for 16 separate runs on each setting (refer to paper for details).
 
 ## Reference
-[DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task) <br>
-[SED with FilterAugment](https://github.com/frednam93/FilterAugSED)
+- [DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task) <br>
+- [Sound event detection with FilterAugment](https://github.com/frednam93/FilterAugSED) <br>
+- [Temporal Dynamic CNN for text-independent speaker verification](https://https://github.com/shkim816/temporal_dynamic_cnn)
 
 ## Citation & Contact
 If this repository helped your works, please cite papers below!
