@@ -35,7 +35,7 @@ class ContextGating(nn.Module):
 
 
 class Dynamic_conv2d(nn.Module):
-    def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, bias=False, n_basis_kernels=4,
+    def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, bias=True, n_basis_kernels=4,
                  temperature=31, pool_dim='freq'):
         super(Dynamic_conv2d, self).__init__()
 
@@ -104,11 +104,11 @@ class attention2d(nn.Module):
         if hidden_planes < 4:
             hidden_planes = 4
 
-        if not pool_dim == 'both':
-            self.conv1d1 = nn.Conv1d(in_planes, hidden_planes, kernel_size, stride=stride, padding=padding, bias=False)
+        if pool_dim != 'both':
+            self.fc1 = nn.Conv1d(in_planes, hidden_planes, kernel_size, stride=stride, padding=padding, bias=False)
             self.bn = nn.BatchNorm1d(hidden_planes)
             self.relu = nn.ReLU(inplace=True)
-            self.conv1d2 = nn.Conv1d(hidden_planes, n_basis_kernels, 1, bias=True)
+            self.fc2 = nn.Conv1d(hidden_planes, n_basis_kernels, 1, bias=True)
             for m in self.modules():
                 if isinstance(m, nn.Conv1d):
                     nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
@@ -134,10 +134,10 @@ class attention2d(nn.Module):
             x = torch.mean(x, dim=1)  #x size : [bs, freqs, frames]
 
         if not self.pool_dim == 'both':
-            x = self.conv1d1(x)               #x size : [bs, hid_chan, frames]
+            x = self.fc1(x)               #x size : [bs, hid_chan, frames]
             x = self.bn(x)
             x = self.relu(x)
-            x = self.conv1d2(x)               #x size : [bs, n_ker, frames]
+            x = self.fc2(x)               #x size : [bs, n_ker, frames]
         else:
             x = self.fc1(x)               #x size : [bs, hid_chan]
             x = self.relu(x)
