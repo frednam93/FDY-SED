@@ -2,3 +2,5 @@ soundfile==0.10.3.post1
 sed_eval==0.2.1
 psds_eval==0.3.0
 tqdm==4.54.1
+resampy==0.2.2
+fire
