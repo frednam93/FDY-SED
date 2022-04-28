@@ -75,12 +75,12 @@ If this repository helped your works, please cite papers below! 2nd paper is abo
 }
 
 @INPROCEEDINGS{nam2021filteraugment,
-  author={Nam, Hyeonuk and Kim, Seong-Hu and Park, Yong-Hwa},
-  booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
-  title={Filteraugment: An Acoustic Environmental Data Augmentation Method}, 
-  year={2022},
-  pages={4308-4312},
-  doi={10.1109/ICASSP43922.2022.9747680}}
-
+    author={Nam, Hyeonuk and Kim, Seong-Hu and Park, Yong-Hwa},
+    booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+    title={Filteraugment: An Acoustic Environmental Data Augmentation Method}, 
+    year={2022},
+    pages={4308-4312},
+    doi={10.1109/ICASSP43922.2022.9747680}
+}
 ```
 Please contact Hyeonuk Nam at frednam@kaist.ac.kr for any query.
