@@ -67,7 +67,7 @@ FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | *
 ## Citation & Contact
 If this repository helped your works, please cite papers below! 2nd paper is about data augmentation method called FilterAugment which is applied to this work.
 ```bib
-@article{nam2022frequency,
+@article{nam2022freqdynamicconv,
       title={Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection}, 
       author={Hyeonuk Nam and Seong-Hu Kim and Byeong-Yun Ko and Yong-Hwa Park},
       journal={arXiv preprint arXiv:2203.15296},
