@@ -259,6 +259,8 @@ class CRNN(nn.Module):
         #rnn
         x = self.rnn(x) #x size : [bs, frames, 2 * chan]
         x = self.dropout(x)
+
+        #classifier
         strong = self.dense(x) #strong size : [bs, frames, n_class]
         strong = self.sigmoid(strong)
         if self.attention:
