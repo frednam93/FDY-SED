@@ -65,14 +65,22 @@ FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | *
 - [Temporal Dynamic CNN for text-independent speaker verification](https://https://github.com/shkim816/temporal_dynamic_cnn)
 
 ## Citation & Contact
-If this repository helped your works, please cite papers below!
+If this repository helped your works, please cite papers below! 2nd paper is about data augmentation method called FilterAugment which is applied to this work.
 ```bib
-@article{nam2022frequency,
+@article{nam2022freqdynamicconv,
       title={Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection}, 
       author={Hyeonuk Nam and Seong-Hu Kim and Byeong-Yun Ko and Yong-Hwa Park},
       journal={arXiv preprint arXiv:2203.15296},
       year={2022},
 }
 
+@INPROCEEDINGS{nam2021filteraugment,
+    author={Nam, Hyeonuk and Kim, Seong-Hu and Park, Yong-Hwa},
+    booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+    title={Filteraugment: An Acoustic Environmental Data Augmentation Method}, 
+    year={2022},
+    pages={4308-4312},
+    doi={10.1109/ICASSP43922.2022.9747680}
+}
 ```
 Please contact Hyeonuk Nam at frednam@kaist.ac.kr for any query.
