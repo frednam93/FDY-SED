@@ -59,6 +59,19 @@ FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | *
 
    - These results are based on max values of each metric for 16 separate runs on each setting (refer to paper for details).
 
+
+## Trainied model
+Trained model is at [exps/new_exp_gpu=0](./exps/new_exp_gpu=0). <br>
+You can test trained model by editing [configuration](./configs/config.yaml) @training, "test_only" = True then run [main.py](./main.py):
+
+#### Results of trained FDY-CRNN model uploaded on DESED Real Validation dataset:
+
+Model                      | PSDS1          | PSDS2          | Collar-based F1  | Intersection-based F1
+---------------------------|----------------|----------------|------------------|-----------------
+trained FDY-CRNN (student) | 0.447          | 0.667          | 51.5%            | 74.4%
+trained FDY-CRNN (teacher) | 0.442          | 0.657          | 52.1%            | 74.0%
+
+
 ## Reference
 - [DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task) <br>
 - [Sound event detection with FilterAugment](https://github.com/frednam93/FilterAugSED) <br>
