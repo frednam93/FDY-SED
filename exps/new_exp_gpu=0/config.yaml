@@ -1,0 +1,174 @@
+CRNN:
+  DY_layers:
+  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  activation: cg
+  attention: true
+  conv_dropout: 0.5
+  kernel:
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  n_RNN_cell: 256
+  n_RNN_layer: 2
+  n_basis_kernels: 4
+  n_class: 10
+  n_filt:
+  - 32
+  - 64
+  - 128
+  - 256
+  - 256
+  - 256
+  - 256
+  n_input_ch: 1
+  pad:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  pool_dim: time
+  pooling:
+  - - 2
+    - 2
+  - - 2
+    - 2
+  - - 1
+    - 2
+  - - 1
+    - 2
+  - - 1
+    - 2
+  - - 1
+    - 2
+  - - 1
+    - 2
+  rec_dropout: 0
+  stride:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  temperature: 31
+dataset:
+  pubeval_dur: ../datasets/dcase2021/dataset/metadata/eval/public_durations.tsv
+  pubeval_folder: ../datasets/dcase2021/dataset/audio/eval/public_16k/
+  pubeval_folder_44k: ../datasets/dcase2021/dataset/audio/eval/public/
+  pubeval_tsv: ../datasets/dcase2021/dataset/metadata/eval/public.tsv
+  test_dur: ../datasets/dcase2021/dataset/metadata/validation/validation_durations.tsv
+  test_folder: ../datasets/dcase2021/dataset/audio/validation/validation_16k/
+  test_folder_44k: ../datasets/dcase2021/dataset/audio/validation/validation/
+  test_tsv: ../datasets/dcase2021/dataset/metadata/validation/validation.tsv
+  unlabeled_folder: ../datasets/dcase2021/dataset/audio/train/unlabel_in_domain_16k/
+  unlabeled_folder_44k: ../datasets/dcase2021/dataset/audio/train/unlabel_in_domain/
+  weak_folder: ../datasets/dcase2021/dataset/audio/train/weak_16k/
+  weak_folder_44k: ../datasets/dcase2021/dataset/audio/train/weak/
+  weak_tsv: ../datasets/dcase2021/dataset/metadata/train/weak.tsv
+feature:
+  audio_max_len: 10
+  f_max: 8000
+  f_min: 0
+  frame_length: 2048
+  hop_length: 256
+  n_mels: 128
+  n_window: 2048
+  net_subsample: 4
+  sample_rate: 16000
+  sr: 16000
+generals:
+  save_folder: exps/new_exp_gpu=0_iter_0
+  savepsds: true
+  test_on_public_eval: false
+  warn: false
+opt:
+  lr: 0.001
+scaler:
+  dims:
+  - 0
+  - 2
+  normtype: minmax
+  savepath: ./scaler.ckpt
+  statistic: instance
+synth_dataset:
+  synth_train_dur: ../datasets/dcase2021/dataset/metadata/train/synthetic21_train/durations.tsv
+  synth_train_folder: ../datasets/dcase2021/dataset/audio/train/synthetic21_train/soundscapes_16k/
+  synth_train_folder_44k: ../datasets/dcase2021/dataset/audio/train/synthetic21_train/soundscapes/
+  synth_train_tsv: ../datasets/dcase2021/dataset/metadata/train/synthetic21_train/soundscapes.tsv
+  synth_val_dur: ../datasets/dcase2021/dataset/metadata/validation/synthetic21_validation/durations.tsv
+  synth_val_folder: ../datasets/dcase2021/dataset/audio/validation/synthetic21_validation/soundscapes_16k/
+  synth_val_folder_44k: ../datasets/dcase2021/dataset/audio/validation/synthetic21_validation/soundscapes/
+  synth_val_tsv: ../datasets/dcase2021/dataset/metadata/validation/synthetic21_validation/soundscapes.tsv
+training:
+  afl_loss: null
+  batch_sizes:
+  - 12
+  - 12
+  - 24
+  debug: false
+  decode_weak_test: 1
+  decode_weak_valid: 0
+  div_dataset: false
+  div_ratio: 25
+  ema_factor: 0.999
+  median_window:
+  - 5
+  - 11
+  - 5
+  - 5
+  - 5
+  - 67
+  - 61
+  - 49
+  - 5
+  - 17
+  mixup_rate: 1
+  mixup_type: soft
+  n_epochs: 200
+  n_epochs_warmup: 50
+  n_test_thresholds: 50
+  net_pooling: 4
+  seed: 21
+  test_only: false
+  time_mask_ratios:
+  - 5
+  - 20
+  trainweak_only: false
+  transform:
+    choice:
+    - 1
+    - 0
+    - 0
+    filter_bands:
+    - 2
+    - 5
+    filter_db_range:
+    - -4.5
+    - 6
+    filter_minimum_bandwidth: 4
+    filter_type: step
+    freq_mask_ratio: 16
+    n_transform: 2
+    noise_snrs:
+    - 35
+    - 40
+  val_thresholds:
+  - 0.5
+  w_cons_max: 2
+  w_weak: 0.5
+  w_weak_cons: 1
+  weak_split: 0.9

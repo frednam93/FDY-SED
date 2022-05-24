@@ -41,7 +41,8 @@ def get_save_directories(configs, train_cfg, iteration, args):
         configs["generals"]["save_folder"] = save_folder
     if not train_cfg["test_only"]:
         if iteration is not None:
-            save_folder = save_folder + '_iter:' + str(iteration)
+            save_folder = save_folder + '_iter_' + str(iteration)
+            configs["generals"]["save_folder"] = save_folder
         print("save directory : " + save_folder)
         if os.path.isdir(save_folder):
             shutil.rmtree(save_folder)
@@ -67,6 +68,8 @@ def get_save_directories(configs, train_cfg, iteration, args):
 
 def get_logger(save_folder):
     logger = logging.getLogger()
+    while len(logger.handlers) > 0:                    # check if handler already exists
+        logger.removeHandler(logger.handlers[0])       # Logger already exists
     formatter = logging.Formatter('%(message)s')
     logger.setLevel(logging.INFO)
     stream_handler = logging.StreamHandler()

@@ -349,7 +349,7 @@ def test(train_cfg):
 
 
 if __name__ == "__main__":
-    n_repeat = 1
+    n_repeat = 16
     for iter in range(n_repeat):
-        #main(iter)
-        main()
+        main(iter)
+        # main()
