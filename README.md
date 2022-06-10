@@ -1,6 +1,7 @@
 # Frequency Dynamic Convolution-Recurrent Neural Network (FDY-CRNN) for Sound Event Detection
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frequency-dynamic-convolution-frequency/sound-event-detection-on-desed)](https://paperswithcode.com/sota/sound-event-detection-on-desed?p=frequency-dynamic-convolution-frequency)
+<a href="https://replicate.com/frednam93/fdy_sed"><img src="https://replicate.com/frednam93/fdy_sed/badge"></a>
 
 Official implementation of <br>
  - **Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection** (Submitted to INTERSPEECH 2022) <br>
