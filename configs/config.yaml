@@ -56,7 +56,7 @@ CRNN:
   n_RNN_cell: 256
   n_RNN_layer: 2
   rec_dropout: 0
-  attention: True
+  attention: class                      # time / class
 
   n_input_ch: 1
   activation: cg
@@ -70,7 +70,7 @@ CRNN:
   n_basis_kernels: 4
   DY_layers: [ 0, 1, 1, 1, 1, 1, 1 ]
   temperature: 31
-  pool_dim: 'time'                     # leave time: "freq", pool time "time", pool both: "both"
+  pool_dim: time                       # leave time: "freq", pool time "time", pool both: "both"
 
 
 

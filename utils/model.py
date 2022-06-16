@@ -238,7 +238,10 @@ class CRNN(nn.Module):
 
         if self.attention:
             self.dense_softmax = nn.Linear(n_RNN_cell * 2, n_class)
-            self.softmax = nn.Softmax(dim=-1)
+            if self.attention == "time":
+                self.softmax = nn.Softmax(dim=1)          # softmax on time dimension
+            elif self.attention == "class":
+                self.softmax = nn.Softmax(dim=-1)         # softmax on class dimension
 
     def forward(self, x): #input size : [bs, freqs, frames]
         #cnn
