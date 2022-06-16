@@ -3,7 +3,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/frequency-dynamic-convolution-frequency/sound-event-detection-on-desed)](https://paperswithcode.com/sota/sound-event-detection-on-desed?p=frequency-dynamic-convolution-frequency)
 
 Official implementation of <br>
- - **Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection** (Submitted to INTERSPEECH 2022) <br>
+ - **Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection** (Accepted to INTERSPEECH 2022) <br>
 by Hyeonuk Nam, Seong-Hu Kim, Byeong-Yun Ko, Yong-Hwa Park <br>[![arXiv](https://img.shields.io/badge/arXiv-2203.15296-brightgreen)](https://arxiv.org/abs/2203.15296)<br>
 
 
@@ -11,9 +11,9 @@ by Hyeonuk Nam, Seong-Hu Kim, Byeong-Yun Ko, Yong-Hwa Park <br>[![arXiv](https:/
 
 ![](./utils/fig2.png)
 
-Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin of input, in order to remove tranlation-invariance of 2D convolution along the frequency axis.
-- Traditional 2D convolution enforces translation-invaraince on time-frequency domain audio data in both time and frequency axis.
-- However, sound events exhibit time-frequency patterns that are translation-invariant in time axis but not in frequency axis.
+Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin of input, in order to remove tranlation equivariance of 2D convolution along the frequency axis.
+- Traditional 2D convolution enforces translation equivariance on time-frequency domain audio data in both time and frequency axis.
+- However, sound events exhibit time-frequency patterns that are translation equivariant in time axis but not in frequency axis.
 - Thus, frequency dynamic convolution is proposed to remove physical inconsistency of traditional 2D convolution on sound event detection.
 
 <img src=./utils/fig3.jpg align="left" height="270" width="395"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
@@ -58,6 +58,19 @@ TDY-CRNN                | 0.415          | 0.652          | 51.2%            | 7
 FDY-CRNN                | **0.452**      | **0.670**      | **53.3%**        | **75.3%**
 
    - These results are based on max values of each metric for 16 separate runs on each setting (refer to paper for details).
+
+
+## Trainied model
+Trained model is at [exps/new_exp_gpu=0](./exps/new_exp_gpu=0). <br>
+You can test trained model by editing [configuration](./configs/config.yaml) @training, "test_only" = True then run [main.py](./main.py):
+
+#### Results of trained FDY-CRNN model uploaded on DESED Real Validation dataset:
+
+Model                      | PSDS1          | PSDS2          | Collar-based F1  | Intersection-based F1
+---------------------------|----------------|----------------|------------------|-----------------
+trained FDY-CRNN (student) | 0.447          | 0.667          | 51.5%            | 74.4%
+trained FDY-CRNN (teacher) | 0.442          | 0.657          | 52.1%            | 74.0%
+
 
 ## Reference
 - [DCASE 2021 Task 4 baseline](https://github.com/DCASE-REPO/DESED_task) <br>
