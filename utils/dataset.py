@@ -1,4 +1,5 @@
 #Some codes are adopted from https://github.com/DCASE-REPO/DESED_task
+import librosa
 import torch
 from torch.utils.data import Dataset
 import torchaudio
@@ -136,8 +137,10 @@ class UnlabeledDataset(Dataset):
 
 
 def waveform_modification(filepath, pad_to, encoder):
-    wav, _ = sf.read(filepath)
+    wav, sr = sf.read(filepath)
     wav = to_mono(wav)
+    if sr != encoder.sr:
+        wav = librosa.resample(wav, orig_sr=sr, target_sr=encoder.sr)
     wav, pad_mask = pad_wav(wav, pad_to, encoder)
     wav = torch.from_numpy(wav).float()
     wav = normalize_wav(wav)
