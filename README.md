@@ -11,14 +11,14 @@ by Hyeonuk Nam, Seong-Hu Kim, Byeong-Yun Ko, Yong-Hwa Park <br>[![arXiv](https:/
 
 ![](./utils/fig2.png)
 
-Frequency Dynamic Convolution applied kernel that adapts to each freqeuncy bin of input, in order to remove tranlation equivariance of 2D convolution along the frequency axis.
+Frequency Dynamic Convolution applied kernel that adapts to each frequency bin of input, in order to remove translation equivariance of 2D convolution along the frequency axis.
 - Traditional 2D convolution enforces translation equivariance on time-frequency domain audio data in both time and frequency axis.
 - However, sound events exhibit time-frequency patterns that are translation equivariant in time axis but not in frequency axis.
 - Thus, frequency dynamic convolution is proposed to remove physical inconsistency of traditional 2D convolution on sound event detection.
 
 <img src=./utils/fig3.jpg align="left" height="270" width="395"> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 
-Above bar chart compares the class-wise event-based F1 scores for the CRNN model with and without freqeuncy dynamic convolution. It can be observed that
+Above bar chart compares the class-wise event-based F1 scores for the CRNN model with and without frequency dynamic convolution. It can be observed that
 - Quasi-stationary sound events such as blender, frying and vacuum cleaner exhibits simple time-frequency patterns (example shown below (a), a log mel spectrogram of vacuum cleaner sound). Thus, frequency dynamic convolution is less effective on these sound events.
 - Non-stationary sound events such as alarm/bell ringing, cat, dishes, dog, electric shaver/toothbrush, running water and speech exhibits intricate time-frequency patterns (example shown below (b), a log mel spectrogram of speech sound). Thus, frequency dynamic convolution is especially effective on these sound events.
 
