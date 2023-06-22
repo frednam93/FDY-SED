@@ -80,11 +80,13 @@ trained FDY-CRNN (teacher) | 0.442          | 0.657          | 52.1%            
 ## Citation & Contact
 If this repository helped your works, please cite papers below! 2nd paper is about data augmentation method called FilterAugment which is applied to this work.
 ```bib
-@article{nam2022freqdynamicconv,
-      title={Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection}, 
-      author={Hyeonuk Nam and Seong-Hu Kim and Byeong-Yun Ko and Yong-Hwa Park},
-      journal={arXiv preprint arXiv:2203.15296},
-      year={2022},
+@inproceedings{nam22_interspeech,
+  author={Hyeonuk Nam and Seong-Hu Kim and Byeong-Yun Ko and Yong-Hwa Park},
+  title={{Frequency Dynamic Convolution: Frequency-Adaptive Pattern Recognition for Sound Event Detection}},
+  year=2022,
+  booktitle={Proc. Interspeech 2022},
+  pages={2763--2767},
+  doi={10.21437/Interspeech.2022-10127}
 }
 
 @INPROCEEDINGS{nam2021filteraugment,
